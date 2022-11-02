@@ -12,9 +12,18 @@
 
 <body>
 
-  <amp-script layout="container" src="app.js">
+  <amp-script width="200" height="100" script="hello-world">
     <button id="hello">Insert Hello World!</button>
   </amp-script>
+
+  <script id="hello-world" type="text/plain" target="amp-script">
+    const button = document.getElementById("hello");
+    button.addEventListener("click", () => {
+    const el = document.createElement("h1");
+    el.textContent = "Hello World!";
+    document.body.appendChild(el);
+    });
+  </script>
 
 </body>
 
